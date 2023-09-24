@@ -1,38 +1,244 @@
-.App {
-  text-align: center;
+/* 
+Author: Jeremy St Pierre
+
+Fonts used:
+  font-family: 'Karla', sans-serif;
+  font-family: 'Markazi Text', serif;
+
+Color Palette: 
+  #495E57 Dark Green
+  #F4CE14 Lemon
+  #EE9972 Sunburn
+  #FBDABB Mackinaw Peach
+  #EDEFEE Eggshell (white)
+  #333333 Charcoal Jeans (black)
+  #D9D9D9 Kitchen grey     */
+
+:root {
+  --olive-green: #495E57;
+  --lemon-yellow: #F4CE14;
+  --sunburn: #EE9972;
+  --mackinaw-peach: #FBDABB;
+  --eggshell: #EDEFEE;
+  --charcoal: #333333;
+  --kitchen: #D9D9D9; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
+}
+
+h1 {
+  font-size: 64pt;
+  font-family: 'Markazi Text', serif;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+}
+h2 {
+  font-size: 40pt;
+  font-family: 'Markazi Text', serif;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+}
+
+h3 {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: normal;
+}
+
+.card-title {
+  font-family: 'Karla', sans-serif;
+  font-size: 18pt;
+  font-weight: bold;
+}
+.price {
+  color: var(--sunburn);
+}
+
+p {
+  font-size: 16pt;
+  line-height: 1.5;
+  font-family: 'Karla', sans-serif;
+  color: var(--olive-green);
+}
+
+button {
+  font-size: 18pt;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  padding: 18px;
+  border-radius: 16px;
+  background-color: var(--lemon-yellow);
+  border: 0px;
+  height: 64px;
+  width: 220px;
+}
+
+header {
+  margin: 0px auto;
+  padding: 0px 40px 0px 40px;
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
+  background-color: var(--kitchen);
+  height: 120px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50%;
+}
+#logo-top {
+  transform: scale(1.5);
+}
+
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  list-style-type: none;
+}
+/*   MAIN  */
+
+main {
+
+}
+#hero {
+  width: 100%;
+  margin: 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--olive-green);
+}
+#hero article {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#hero h1 {
+  color: var(--lemon-yellow);
+}
+#hero h2, #hero h3 {
+  color: var(--eggshell);
+}
+#hero button {
+  width: 50%;
+}
+#hero-body {
+  margin-left:11%;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 40px 0px 40px;
+  justify-content: space-evenly;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#hero-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#hero img {
+  width: 40%;
+  height: auto;
+  border-radius: 16px;
+}
+
+/* Specials */
+#specials {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 120px 0px 120px;
+}
+
+#specials-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px 20px 80px;
+}
+
+#specials-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#specials-body {
+  padding-bottom: 20px;
+}
+
+.special-card {
+  width: 20vw;
+  height: auto;
+  overflow: hidden;
+  background-color: var(--kitchen);
+  border-radius: 16px;
+}
+.special-card span, .special-card p {
+  padding-left: 8px;
+}
+.special-card img {
+  width: 428px;
+  height: 285px;
+  border-radius: 16px 16px 0px 0px;
+}
+
+
+/*  Testimonials */
+#testimonials {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 70px 0px 70px;
+  background-color: var(--olive-green);
+  color: var(--eggshell);
+  text-align: center;
+}
+#testimonials p {
+  color: var(--kitchen);
+  padding: 40px;
+}
+#testimonials-body {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.avatar {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
+.testimonial-card {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 320px;
+}
+
+/* About section */
+#about {
+  padding: 40px 20px 40px 20px;
+  background-color: var(--kitchen);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#about article {
+  width: 25%; 
+}
+
+footer {
+
 }

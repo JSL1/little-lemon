@@ -4,7 +4,7 @@ import Nav from "./Nav";
 const Header = () => {
     return (
     <header>
-        <img src={Logo} alt="Little Lemon" />
+        <img src={Logo} alt="Little Lemon" id="logo-top" />
         <Nav />
     </header>
     );

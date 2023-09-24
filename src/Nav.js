@@ -5,12 +5,24 @@ const Nav = () => {
     return (
         <nav>
             <ul className="Navbar">
-                <li className="Navitem">Home</li>
-                <li className="Navitem">About</li>
-                <li className="Navitem">Menu</li>
-                <li className="Navitem">Reservations</li>
-                <li className="Navitem">Order online</li>
-                <li className="Navitem">Log in</li>
+                <li className="card-title">
+                    <Link to="/">Home</Link>
+                </li>
+                <li className="card-title">
+                    <Link to="#about">About</Link>
+                </li>
+                <li className="card-title">
+                    <Link to="/menu">Menu</Link>
+                </li>
+                <li className="card-title">
+                    <Link to="/booking">Reservations</Link>
+                </li>
+                <li className="card-title">
+                    <Link to="#">Order online</Link>
+                </li>
+                <li className="card-title">
+                    <Link to="#">Log in</Link>
+                </li>
             </ul>
         </nav>
     );
