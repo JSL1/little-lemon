@@ -10,7 +10,7 @@ const SpecialCard = (props) => {
             <p className="card-description">{menuItem.description}</p>
             <span className="card-title">
                 Order for delivery.
-                <span class="material-symbols-outlined">local_taxi</span>
+                <span className="material-symbols-outlined">local_taxi</span>
             </span>
         </div>
     )

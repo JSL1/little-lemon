@@ -1,116 +1,59 @@
-import React, { Component } from "react";
+import React, { useState, useReducer, Component, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Waiter from './images/restauranfood.jpg';
-import imgGreekSalad from './images/greek salad.jpg';
-import imgBruschetta from './images/bruchetta.svg';
-import imgLemoncello from './images/lemon dessert.jpg';
-import RestaurantPic from './images/restaurant.jpg';
-import MarioPic from './images/restaurant chef B.jpg';
+import Homepage from "./Homepage";
 import BookingPage from "./BookingPage";
-import SpecialCard from "./subcomponents/SpecialCard";
-import Testimonial from "./subcomponents/Testimonial";
-import './image-stack.css';
 
-const specials = [
-    {
-        title: 'Greek Salad',
-        image: imgGreekSalad,
-        price: 12.99,
-        description: 'Our famous original greek salad. Tomatoes, onions, peppers and our house made feta.',
-    },{
-        title: 'Bruschetta',
-        image: imgBruschetta,
-        price: 12.99,
-        description: 'Vineripe tomatoes with garlic and italian parsley, served on our famous italian bread with extra virgin olive oil.',
-    }, {
-        title: 'Lemoncello Cake',
-        image: imgLemoncello,
-        price: 8.49,
-        description: 'This comes straight from Grandma\'s recipe book. Fresh lemons and italian tradition.',
-    },
-];
+import './css/image-stack.css';
+import { fetchAPI, submitAPI } from "./api/api";
 
-const testimonials = [
-    {
-        name: 'Greg',
-        rating: 3,
-        content: 'I love the lemoncello cake!'
-    },{
-        name: 'Jean',
-        rating: 4, 
-        content: 'Amazing food and fast deliver!',
-    },{
-        name: 'Melina',
-        rating: 3,
-        content: 'We loved ourd dinner and the cappucino was great!'
-    },
-];
-
-const Homepage = () => {
-    return (
-        <main>
-            <section id="hero">
-                <article id="hero-body">
-                    <h1>Little Lemon</h1>
-                    <h2>Chicago</h2>
-                    <h3>We are a family-owned mediterranean restaurant  located in the heart of Chicago, IL. We focus on traditional recipes with a modern twist.</h3>
-                    <button>Reserve a Table</button>
-                </article>
-                <article id="hero-image">
-                    <img src={Waiter} alt="Little lemon server presenting an appetizer" />
-                </article>
-            </section>
-            <section id="specials">
-                <article id="specials-header">
-                    <h1>This Week's Specials</h1>
-                    <button>Online Menu</button>
-                </article>
-                <article id="specials-body">
-                    <article id="specials-cards">
-                        {specials.map(special => (
-                            <SpecialCard menuItem={special} />
-                        ))}
-                    </article>
-                </article>
-            </section>
-            <section id="testimonials">
-                <article id="testimonials-header">
-                    <h1>Testimonials</h1>
-                </article>
-                <article id="testimonials-body">
-                    {testimonials.map(testimonial => (
-                        <Testimonial review={testimonial} />
-                    ))}
-                </article>
-            </section>
-            <section id="about">
-                <article id="about-text">
-                    <h1>Our story</h1>
-                    <p>
-                        Little Lemon was founded in 1985 by Luigi Mario and Mario Mario. Bringing authentic italian food to Chicago. 
-                        Today, we are still 100% family owned and located in the heart of Chicago, IL. We focus on traditional recipes with a modern twist.
-                    </p>
-                </article>
-                <article id="about-images">
-                    <div className="image-stack">
-                        <div className="image-stack__item image-stack__item--top">
-                            <img src={MarioPic} alt="Mario seasoning some stuff" />
-                        </div>
-                        <div className="image-stack__item image-stack__item--bottom">
-                            <img src={RestaurantPic} alt="Little Lemon interior" />
-                        </div>
-                    </div>
-                </article>
-            </section>
-        </main>
-    );
+function reducer(state, action) {
+    switch (action.type) {
+        case 'remove_time':
+            const index = state.times.indexOf(action.payload);
+            const newTimes = state.availableTimes;
+            newTimes.splice(index, 1);
+            return { ...state, availableTimes: newTimes };
+        case 'initialize_times':
+            return { ...state, availableTimes: fetchAPI(new Date())};
+        case 'update_times':
+            return { ...state, date: action.payload, availableTimes: fetchAPI(action.payload) };
+        default:
+            throw new Error();
+    }
 }
 
 const Main = () => {
+    const today = new Date();
+    const [state, dispatch] = useReducer(reducer, {
+        date: today,
+        availableTimes: fetchAPI(new Date()),
+    });
+
+    const getAvailableTimes = () => {
+        let times = fetchAPI(state.date);
+        console.log(times);
+    }
+
+    /*useEffect(() => {
+        console.log('state date: ' + state.date);
+        console.log('state times: ' + state.availableTimes);
+    }, [state]);*/
+
+    function initializeTimes() {
+        dispatch({ type: 'initialize_times' });
+    }
+
+    function updateTimes(date) {
+        dispatch({type: 'update_times', payload: date});
+    }
+    
+    
     return (
         <Routes>
             <Route path='/' element={<Homepage />} />
-            <Route path='/booking' element={<BookingPage />} />
+            <Route path='/BookingSuccess' element={<Homepage booking={true} />} />
+            <Route path='/BookingFailure' element={<Homepage failure={true} />} />
+            <Route path='/booking' element={<BookingPage times={state.availableTimes} date={state.date} updateFunc={updateTimes}/>} />
         </Routes>
     );
 }

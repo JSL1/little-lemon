@@ -110,6 +110,7 @@ nav {
 main {
 
 }
+
 #hero {
   width: 100%;
   margin: 0px;
@@ -229,7 +230,7 @@ main {
 
 /* About section */
 #about {
-  padding: 40px 20px 40px 20px;
+  padding: 40px 20px 40px 0px;
   background-color: var(--kitchen);
   display: flex;
   flex-direction: row;
