@@ -1,12 +1,11 @@
 import React, { useState, useReducer, Component, useEffect } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Link, useNavigate } from "react-router-dom";
 import Waiter from './images/restauranfood.jpg';
 import imgGreekSalad from './images/greek salad.jpg';
 import imgBruschetta from './images/bruchetta.svg';
 import imgLemoncello from './images/lemon dessert.jpg';
 import RestaurantPic from './images/restaurant.jpg';
 import MarioPic from './images/restaurant chef B.jpg';
-import BookingPage from "./BookingPage";
 import SpecialCard from "./subcomponents/SpecialCard";
 import Testimonial from "./subcomponents/Testimonial";
 import './css/image-stack.css';
@@ -45,12 +44,14 @@ const testimonials = [
     },{
         name: 'Melina',
         rating: 3,
-        content: 'We loved ourd dinner and the cappucino was great!'
+        content: 'We loved our dinner and the cappucino was great!'
     },
 ];
 
 
 const Homepage = (props) => {
+
+    const navigate = useNavigate();
 
     const [renderSuccessMessage, setRenderSuccessMessage] = useState(props.booking);
     const [renderFailureMessage, setRenderFailureMessage] = useState(props.failure);
@@ -67,7 +68,11 @@ const Homepage = (props) => {
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>
                     <h3>We are a family-owned mediterranean restaurant  located in the heart of Chicago, IL. We focus on traditional recipes with a modern twist.</h3>
-                    <button>Reserve a Table</button>
+                    <button 
+                        aria-label="Click here to reserve a table."
+                        onClick={() => navigate('./booking')} >
+                        Reserve a Table
+                    </button>
                 </article>
                 <article id="hero-image">
                     <img src={Waiter} alt="Little lemon server presenting an appetizer" />
@@ -83,7 +88,7 @@ const Homepage = (props) => {
                 <article id="specials-body">
                     <article id="specials-cards">
                         {specials.map(special => (
-                            <SpecialCard key={specials.indexOf(special)} menuItem={special} />
+                            <SpecialCard key={"special" + specials.indexOf(special)} menuItem={special} />
                         ))}
                     </article>
                 </article>
@@ -94,7 +99,7 @@ const Homepage = (props) => {
                 </article>
                 <article id="testimonials-body">
                     {testimonials.map(testimonial => (
-                        <Testimonial key={testimonials.indexOf(testimonial)} review={testimonial} />
+                        <Testimonial key={"review" + testimonials.indexOf(testimonial)} review={testimonial} />
                     ))}
                 </article>
             </section>

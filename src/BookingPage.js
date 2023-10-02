@@ -5,7 +5,7 @@ const BookingPage = (props) => {
     const availableTimes = props.times;
     return (
         <>
-            <BookingForm times={availableTimes} date={props.date} updateFunc={props.updateFunc}/>            
+            <BookingForm times={availableTimes} date={props.date} updateFunc={props.updateFunc}/>           
         </>
     )
 }

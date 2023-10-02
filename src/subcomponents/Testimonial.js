@@ -16,7 +16,7 @@ const Testimonial = (props) => {
         <div className="testimonial-card">
             <span className='review-stars'>
                 {stars.map(star => (
-                    <Star />
+                    <Star key={"star" + stars.indexOf(star)} />
                 ))}
             </span>
             <img src={Avatar} className='avatar'/>

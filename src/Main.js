@@ -34,11 +34,6 @@ const Main = () => {
         console.log(times);
     }
 
-    /*useEffect(() => {
-        console.log('state date: ' + state.date);
-        console.log('state times: ' + state.availableTimes);
-    }, [state]);*/
-
     function initializeTimes() {
         dispatch({ type: 'initialize_times' });
     }

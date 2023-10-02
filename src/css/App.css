@@ -6,14 +6,15 @@ Fonts used:
   font-family: 'Markazi Text', serif;
 
 Color Palette: 
-  #495E57 Dark Green
+  #495E57 olive Green
   #F4CE14 Lemon
   #EE9972 Sunburn
   #FBDABB Mackinaw Peach
   #EDEFEE Eggshell (white)
   #333333 Charcoal Jeans (black)
-  #D9D9D9 Kitchen grey     */
+  #D9D9D9 Kitchen grey     
 
+*/
 :root {
   --olive-green: #495E57;
   --lemon-yellow: #F4CE14;
@@ -94,6 +95,20 @@ nav {
   justify-content: space-evenly;
   width: 50%;
 }
+
+nav a, nav a:visited {
+  color: var(--olive-green);
+  text-decoration: none;
+  text-decoration-color: var(--lemon-yellow);
+  transition: all 0.5s;
+}
+
+nav a:hover, nav a:active {
+  color: var(--charcoal);
+  text-decoration: underline;
+  text-decoration-color: var(--lemon-yellow);
+}
+
 #logo-top {
   transform: scale(1.5);
 }
@@ -241,5 +256,49 @@ main {
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 40px 20px 40px 20px;
+}
 
+footer > section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#doormat {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content:space-around;
+}
+#doormat-links {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto 0px 16px;
+}
+#doormat-links a, #doormat-links a:visited, #doormat-links a:active, address, phone {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--olive-green);
+  font-family: 'Karla', sans-serif;
+}
+
+#footer-logo {
+  height: 200px;
+  width: auto;
+}
+
+#footer-2 {
+  background-color: var(--olive-green);
+  color: var(--eggshell);
+  font-size: 18px;
+  font-family: 'Markazi Text', serif;
+  padding: 20px 0px 20px 0px;
+  margin-top: 20px;
+  font-weight: lighter;
+  font-style: italic;
 }
