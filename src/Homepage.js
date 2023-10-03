@@ -112,6 +112,7 @@ const Homepage = (props) => {
                     </p>
                 </article>
                 <article id="about-images">
+                    <img src={MarioPic} id="standalone_mario" />
                     <div className="image-stack">
                         <div className="image-stack__item image-stack__item--top">
                             <img src={MarioPic} alt="Mario seasoning some stuff" />

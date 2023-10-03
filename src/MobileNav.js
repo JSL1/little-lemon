@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const Nav = (props) => {
+const MobileNav = (props) => {
     return (
         <nav>
-            <ul className="Navbar">
+            <ul className="MobileNav">
+                <div id="nav-x-button">
+                    <a onClick={props.func}>
+                        <span class="material-symbols-outlined">close</span>
+                    </a>
+                </div>
                 <div>
                     <li className="card-title">
                         <Link to="/" aria-label="Click here to navigate to the homepage.">Home</Link>
@@ -40,4 +45,4 @@ const Nav = (props) => {
     );
 }
 
-export default Nav;
+export default MobileNav;

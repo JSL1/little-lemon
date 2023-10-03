@@ -24,3 +24,18 @@
     width: 645px;
     height: auto;
 }
+
+#standalone_mario {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .image-stack {
+        display: none;
+    }
+    #standalone_mario {
+        display: block;
+        width: 100vw;
+        
+    }
+}

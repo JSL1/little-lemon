@@ -1,0 +1,221 @@
+@media only screen and (max-width: 600px) {
+
+    :root {
+        --olive-green: #495E57;
+        --lemon-yellow: #F4CE14;
+        --sunburn: #EE9972;
+        --mackinaw-peach: #FBDABB;
+        --eggshell: #EDEFEE;
+        --charcoal: #333333;
+        --kitchen: #D9D9D9; 
+    }
+    body{
+        overflow-x: hidden;
+    }
+    h1 {
+        font-size: 40pt;
+        font-family: 'Markazi Text', serif;
+        font-weight: bold;
+        padding: 0px;
+        margin: 0px;
+      }
+      h2 {
+        font-size: 32pt;
+        font-family: 'Markazi Text', serif;
+        font-weight: bold;
+        padding: 0px;
+        margin: 0px;
+      }
+      
+      h3 {
+        font-family: 'Karla', sans-serif;
+        font-size: 18pt;
+        font-weight: normal;
+      }
+      
+      .card-title {
+        font-family: 'Karla', sans-serif;
+        font-size: 18pt;
+        font-weight: bold;
+      }
+      .price {
+        color: var(--sunburn);
+      }
+      
+      p {
+        font-size: 16pt;
+        line-height: 1.5;
+        font-family: 'Karla', sans-serif;
+        color: var(--olive-green);
+      }
+      
+      button {
+        font-size: 12pt;
+        font-family: 'Karla', sans-serif;
+        font-weight: bold;
+        padding: 18px;
+        border-radius: 16px;
+        background-color: var(--lemon-yellow);
+        border: 0px;
+    }
+      
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #nav-x-button {
+        display: block;
+        padding: 6px;
+        border-radius: 50%;
+        border: 1px solid var(--sunburn);
+        color: var(--sunburn);
+        width: 24px;
+        height: 24px;
+        margin-left: 60%;
+    }
+
+    .Navbar {
+        display: none;
+    }
+
+    .MobileNav {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        background-color: var(--kitchen);
+        color: var(--olive-green);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+    }
+
+    .MobileNav div {
+        padding: 18px;
+    }
+
+
+    #hamburger-icon {
+        display: block;
+        border-radius: 50%;
+        background-color: var(--kitchen);
+        border: 1px solid var(--olive-green);
+        color: var(--olive-green);
+        padding: 12px;
+    }
+
+    #hero {
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    #hero-image {
+        display: flex;
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
+    }
+    #hero article {
+        margin: 40px 0px 40px 0px;
+    }
+    #hero img {
+        width: 100%;
+        height: auto;
+    }
+
+    #specials {
+        display: flex;
+        flex-direction: column;
+        margin: 0px auto;
+        padding: 0px 0px 0px 00px;
+    }
+
+    #specials-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 20px 20px 20px;
+      }
+
+      #specials-header h1 {
+        font-size: 32pt;
+      }
+
+      #specials-cards {
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+
+      .special-card {
+        width: 100vw;
+        height: auto;
+        overflow: hidden;
+        background-color: var(--kitchen);
+        border-radius: 0px;
+        margin: 10px 0px 10px 0px;
+    }
+    #testimonials {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 70px 0px 70px;
+        background-color: var(--olive-green);
+        color: var(--eggshell);
+        text-align: center;
+      }
+      #testimonials p {
+        color: var(--kitchen);
+        padding: 40px;
+      }
+      #testimonials-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+      }
+      .avatar {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+      }
+      .testimonial-card {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 320px;
+    }
+    
+    #about {
+        padding: 40px 0px 40px 0px;
+        background-color: var(--kitchen);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        overflow: hidden;
+      }
+      
+    #about article {
+        width: 100%; 
+      }
+
+    footer > section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+      
+    footer > section > article {
+        margin: 10px 0px 10px 0px;
+    }
+
+    #doormat {
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content:space-around;
+    }
+}   

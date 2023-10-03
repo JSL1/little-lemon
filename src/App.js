@@ -4,6 +4,7 @@
 
 */
 import './css/App.css';
+import './css/App.mobile.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';

@@ -25,6 +25,9 @@ Color Palette:
   --kitchen: #D9D9D9; 
 }
 
+.hidden {
+  display: none;
+}
 body {
   margin: 0px auto;
   display: flex;
@@ -96,6 +99,10 @@ nav {
   width: 50%;
 }
 
+#hamburger-icon {
+  display: none;
+}
+
 nav a, nav a:visited {
   color: var(--olive-green);
   text-decoration: none;
@@ -120,6 +127,11 @@ nav a:hover, nav a:active {
   width: 100%;
   list-style-type: none;
 }
+
+.NavbarMobile {
+  display: none;
+}
+
 /*   MAIN  */
 
 main {
